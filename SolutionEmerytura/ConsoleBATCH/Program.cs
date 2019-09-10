@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleAppEmerytura
+namespace ConsoleBATCH
 {
     class Program
     {
@@ -12,13 +12,16 @@ namespace ConsoleAppEmerytura
         static void Main(string[] args)
         {
             Console.WriteLine("Aplikacja EMERYTURA");
-
-            Console.Write("Podaj imię: ");
-            string imie = Console.ReadLine();
+            if ( args.Length!= 2 )
+            {
+                Console.WriteLine("Brak danych. Koniec");
+                return; // wychodzimy z main
+            }
+            string imie = args[0];
             Console.WriteLine($"Witaj {imie}!");
 
-            Console.Write("Podaj wiek: ");
-            int wiek = int.Parse(Console.ReadLine());
+            
+            int wiek = int.Parse(args[1]);
             if (wiek < wiekEmerytalny)
             {
                 Console.WriteLine($"Zostało Ci {wiekEmerytalny - wiek} lat do emerytury");
@@ -28,7 +31,7 @@ namespace ConsoleAppEmerytura
                 Console.WriteLine("Jesteś emerytem.");
             }
             //Console.ReadKey(); // oczekuje na naciśnięcie dowolnego klawisza
-            
+
         }
     }
 }

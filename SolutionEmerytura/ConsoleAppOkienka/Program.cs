@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
-namespace ConsoleAppEmerytura
+namespace ConsoleAppOkienka
 {
     class Program
     {
         const int wiekEmerytalny = 67;
         static void Main(string[] args)
         {
-            Console.WriteLine("Aplikacja EMERYTURA");
+            Interaction.MsgBox("Aplikacja EMERYTURA");
 
-            Console.Write("Podaj imię: ");
-            string imie = Console.ReadLine();
+            string imie = Interaction.InputBox("Podaj imię");
+
+
             Console.WriteLine($"Witaj {imie}!");
 
             Console.Write("Podaj wiek: ");
@@ -28,7 +30,7 @@ namespace ConsoleAppEmerytura
                 Console.WriteLine("Jesteś emerytem.");
             }
             //Console.ReadKey(); // oczekuje na naciśnięcie dowolnego klawisza
-            
+
         }
     }
 }
