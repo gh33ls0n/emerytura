@@ -19,16 +19,26 @@ namespace ConsoleAppEmerytura
 
             Console.Write("Podaj wiek: ");
             int wiek = int.Parse(Console.ReadLine());
+
             if (wiek < wiekEmerytalny)
             {
-                Console.WriteLine($"Zostało Ci {wiekEmerytalny - wiek} lat do emerytury");
+                if ((wiek == wiekEmerytalny - 1))
+                {
+                    Console.WriteLine($"Zostało Ci {wiekEmerytalny - wiek} rok do emerytury");
+                }
+                else if ((wiek == wiekEmerytalny - 2) || (wiek == wiekEmerytalny - 3) || (wiek == wiekEmerytalny - 4))
+                {
+                    Console.WriteLine($"Zostało Ci {wiekEmerytalny - wiek} lata do emerytury");
+                }
+                else if ((wiek != wiekEmerytalny - 1))
+                {
+                    Console.WriteLine($"Zostało Ci {wiekEmerytalny - wiek} lat do emerytury");
+                }
             }
             else
             {
                 Console.WriteLine("Jesteś emerytem.");
             }
-            //Console.ReadKey(); // oczekuje na naciśnięcie dowolnego klawisza
-            
         }
     }
 }
